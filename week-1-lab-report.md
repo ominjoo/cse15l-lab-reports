@@ -3,9 +3,9 @@
 ## Using command: *cd*
 
 **Using the command with no arguments:** \
-![Image](no-argument.png) 
+![Image](no-arg.png) 
 * The working directory was: /home
-* Because the command cd allows you to change directories, when there is no argument, you simply did not name a directory you wanted to change to. So, the selected directory stays the same. 
+*  
   
 **Using the command with a path to a directory as an argument:** \
 ![Image](path-to-directory.png) 
