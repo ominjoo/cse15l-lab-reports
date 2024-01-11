@@ -15,7 +15,7 @@
 * This output is not an error. Using the command 'cd' with a valid argument (path to directory) should take the user to the specified directory 
   
 **Using the command with a path to a file as an argument:** \
-![Image](path-to-file.png) 
+![Image]
 * The working directory was: /home/lecture1
 * This output is due to the fact that the 'cd' command cannot accept a file or anything that is not a directory as an argument. The 'cd' command is used to changed from one directory to another directory, not to access files.
 * This output is an error. 
