@@ -18,7 +18,8 @@
 ![Image](file-path.png)
 * The working directory was: /home/lecture1
 * This output is due to the fact that the 'cd' command cannot accept a file or anything that is not a directory as an argument. The 'cd' command is used to changed from one directory to another directory, not to access files.
-* This output is an error. The 'cd' command cannot execute because the argument provdided is not a path to a directory.
+* This output is an error. The 'cd' command cannot execute because the argument provided is not a path to a directory.
+  
 ---
 
 ## Using command: *ls*
