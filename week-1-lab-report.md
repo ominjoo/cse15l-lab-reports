@@ -40,4 +40,4 @@
 ![Image](ls-path-file.png)
 * The working directory was: `/home/lecture1`
 * Since we are in the lecture1 directory, we can access its files. When we use `ld` with a file name as an argument, it simply repeats the file name because files are not folders and therefore cannot contain more files or directories
-* This output is not an error. Using the command `ls` with a filer as n argument just repeat its file name.
+* This output is not an error. Using the command `ls` with a file as an argument just repeat its file name.
