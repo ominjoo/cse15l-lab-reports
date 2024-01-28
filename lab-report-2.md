@@ -19,9 +19,12 @@
 
 ## Part 2:
 **Absolute path to private key:**
-![path-private-key](path-private-key.png)
+We can use the command `ls` to list the contents of `.ssh`, which shows that the private key is in `/Users/minjooo/.shh/id_rsa`
+![ls-private-key](ls-private-key.png)
 **Absolute path to public key:**
-![path-public-key](path-public-key.png)
+We can use the command `ls` to list the contents of `.ssh` while in the ieng6 account, and this shows that the public key is in
+`/home/linux/ieng6/oce/7f/mo/.ssh/authorized_keys`
+![ls-public-key](ls-public-key.png)
 **Logging into account without password:**
 ![log-without-pass](log-without-pass.png)
 
