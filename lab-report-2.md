@@ -2,7 +2,7 @@
 ---
 ## Part 1:
 **Code for `ChatServer`:** \
-add image here
+![chatserver-code](chatserver-code.png) \
 **Using `/add-message` for the first time:** 
 add image here
 * bullet point
