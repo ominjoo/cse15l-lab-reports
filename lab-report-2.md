@@ -17,11 +17,11 @@
 * From this request, the value of `message` changes from the previous `[user]: [user's message]` to `[user]: [user's message] \n [user]: [user's message]`
 
 ## Part 2:
-**Absolute path to private key:
+**Absolute path to private key:**
 ![path-private-key](path-private-key.png)
-**Absolute path to public key:
+**Absolute path to public key:**
 ![path-public-key](path-public-key.png)
-**Logging into account without password:
+**Logging into account without password:**
 ![log-without-pass](log-without-pass.png)
 
 ## Part 3:
