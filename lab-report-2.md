@@ -14,7 +14,8 @@
 ![add-message-again](add-message-again.png)
 * The methods that are called now are: `handleRequest`, which then again provides calls to `getPath`, `contains`, `getQuery`, `split`, `indexOf`, `substring`, and `equals`
 * `url.getPath().contains("/add-message")` contains the argument `"/add-message"` in order to make sure that the user includes the correct request. Then, `url.getQuery().split("=")` contains the argumnet `"="` to separate the contains of the query with instances of `=`. In order to obtain the message of the user, I use the `substring` method with the argument of `0` to the `indexOf("&")`. The field `message` contains the value of the previous message value (`[user]: [user's message]`)
-* From this request, the value of `message` changes from the previous `[user]: [user's message]` to `[user]: [user's message] \n [user]: [user's message]`
+* From this request, the value of `message` changes from the previous `[user]: [user's message]` to `[user]: [user's message]`\
+`[user]: [user's message]`
 
 ## Part 2:
 **Absolute path to private key:**
