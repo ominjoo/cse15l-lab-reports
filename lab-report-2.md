@@ -17,12 +17,14 @@
 * From this request, the value of `message` changes from the previous `[user]: [user's message]` to `[user]: [user's message] \n [user]: [user's message]`
 
 ## Part 2:
-** Absolute path to private key:
+**Absolute path to private key:
 ![path-private-key](path-private-key.png)
-** Absolute path to public key:
+**Absolute path to public key:
 ![path-public-key](path-public-key.png)
-** Logging into account without password:
+**Logging into account without password:
 ![log-without-pass](log-without-pass.png)
 
 ## Part 3:
+In weeks 2 and 3, I learned how to build and run a web server basically from scratch by implementing methods within the `Server` class and `ChatServer` class, using a port number to specify where the server runs on, and adding different paths and queries onto the URL to see changes. Additionally, I learned how to also log into my ieng6 account on a remote computer to run the server.
+
 
