@@ -1,6 +1,6 @@
 # Minjoo O: CSE15L Lab Report 3
 
-## Part 1: Bugs
+## Part 1 - Bugs
 
 **Failure-Inducing Input (JUnit test)**
 ```
@@ -46,4 +46,13 @@ After:
   
   }
 ```
-The bug in the code was that the loop is directly updating the contents of the input array as it is being reversed, so updated elements end up being used for elements at later indices. To fix the bug, a temporary array must be created in order to store the elements of the original array. Then, after the reversal of the temporary array, the contents of the original input array should be replaced by the contents of the temporary array. If not, the element at index 0 can be switched with the element at the end of the array, and then when the loop approaches the end of the array, the element at the end will not change. This is why the input of an array of {3, 4, 5} produces {5, 4, 5}.
+The bug in the code was that the loop is directly updating the contents of the input array as it is being reversed, so updated elements end up being used for elements at later indices. To fix the bug, a temporary array must be created in order to store the elements of the original array. Then, after the reversal of the temporary array, the contents of the original input array should be replaced by the contents of the temporary array. If not, the element at index 0 can be switched with the element at the end of the array, and then when the loop approaches the end of the array, the element at the end will not change. This is why the input of an array of {3, 4, 5} produces {5, 4, 5}. \
+
+## Part 2 - Researching Commands
+* -iname
+* -type
+* -user
+* -size
+
+
+
