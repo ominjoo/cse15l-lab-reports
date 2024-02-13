@@ -68,7 +68,7 @@ minjooo@Minjoos-MacBook-Pro technical % find . -iname '*report*txt'
 ./government/About_LSC/State_Planning_Special_Report.txt
 ./government/Post_Rate_Comm/ReportToCongress2002WEB.txt
 ```
-This time, the `find` is used with `-iname` to find where in `./technical` a certain file when we only have a general idea was what it's called, or the words it contains. This is different from using `-name`, which requires you to know the exact spelling, format, and capitalization of the filename - which may not always be the case in reality. \
+This time, the `find` is used with `-iname` to find where in `./technical` a certain file when we only have a general idea was what it's called, or the words it contains. This is different from using `-name`, which requires you to know the exact spelling, format, and capitalization of the filename - which may not always be the case in reality.
 
 Source: [RedHat: 10 ways to use the Linux find command](https://www.redhat.com/sysadmin/linux-find-command)
 
@@ -127,6 +127,7 @@ minjooo@Minjoos-MacBook-Pro technical % find ./government/Media -name 'agency_ex
 ```
 
 The `-exec` option can be used to execute commands on files retrieved by `find`, such as deleting a found file using `-exec rm {} \;`. This is useful for when you need to manage and delete files from the command line. As shown above, the file `agency_expands.txt` has been deleted.
+
 * **Example 2:**
   
 ```
@@ -137,7 +138,7 @@ minjooo@Minjoos-MacBook-Pro technical % find . -name 'commission_report.txt'
 ./biomed/commission_report.txt
 ```
 
-The `-exec` option can be used to move found files to a different directory from the command line using `-exec mv {} <path> \;`. In this example, the file `commission_report.txt` was moved from `./technical/government/About_LSC` to `./biomed` \
+The `-exec` option can be used to move found files to a different directory from the command line using `-exec mv {} <path> \;`. In this example, the file `commission_report.txt` was moved from `./technical/government/About_LSC` to `./biomed`
 
 Source: [TechAdmin: Find Command in Linux with Practical Examples](https://snapshooter.com/learn/linux/find#:~:text=With%20the%20find%20command%2C%20you,in%20all%20Linux%20operating%20systems.](https://tecadmin.net/linux-find-command-with-examples/)https://tecadmin.net/linux-find-command-with-examples/)
 
