@@ -118,15 +118,17 @@ Source: Source: [RedHat: 10 ways to use the Linux find command](https://www.redh
 ---
 ## `-exec`
 * **Example 1:**
+
 ```
 minjooo@Minjoos-MacBook-Pro technical % find ./government/Media -name 'agency_expands.txt'
 ./government/Media/agency_expands.txt
 minjooo@Minjoos-MacBook-Pro technical % find ./government/Media -name 'agency_expands.txt' -exec rm {} \; 
 minjooo@Minjoos-MacBook-Pro technical % find ./government/Media -name 'agency_expands.txt`
-
 ```
+
 The `-exec` option can be used to execute commands on files retrieved by `find`, such as deleting a found file using `-exec rm {} \;`. This is useful for when you need to manage and delete files from the command line. As shown above, the file `agency_expands.txt` has been deleted.
 * **Example 2:**
+  
 ```
 minjooo@Minjoos-MacBook-Pro technical % find . -name 'commission_report.txt' 
 ./government/About_LSC/commission_report.txt
@@ -134,6 +136,7 @@ minjooo@Minjoos-MacBook-Pro technical % find . -name 'commission_report.txt' -ex
 minjooo@Minjoos-MacBook-Pro technical % find . -name 'commission_report.txt'                 
 ./biomed/commission_report.txt
 ```
+
 The `-exec` option can be used to move found files to a different directory from the command line using `-exec mv {} <path> \;`. In this example, the file `commission_report.txt` was moved from `./technical/government/About_LSC` to `./biomed` \
 
 Source: [TechAdmin: Find Command in Linux with Practical Examples](https://snapshooter.com/learn/linux/find#:~:text=With%20the%20find%20command%2C%20you,in%20all%20Linux%20operating%20systems.](https://tecadmin.net/linux-find-command-with-examples/)https://tecadmin.net/linux-find-command-with-examples/)
