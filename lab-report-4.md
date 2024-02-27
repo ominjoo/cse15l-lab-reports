@@ -24,7 +24,7 @@ bash script using `bash test.sh` to run the tests to demonstrate that they fail.
 
 ![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/7f9459ad-f1a0-4789-9670-a8d7ccf1c0d9)
 
-**Keys pressed:** `vim<space>L<tab>.j<tab>`, `:$`, `7k`, `w`, `h`, `i`, `<delete>`, `2`, `<escape>`, `:wq`
+**Keys pressed:** `vim<space>L<tab>.j<tab>`, `:$`, `7k`, `w`, `h`, `i`, `<delete>`, `2`, `<escape>`, `:wq`\
 **Explanation:** To open `ListExamples.java` in Vim, I used the `vim` command with `ListExamples.java`, using `<tab>` to
 auto-fill the rest of the file name. Then, I used `:$` to quickly move to the end of the file so that I can more
 easily access the line I need to edit. I moved up using `7k` (move up 7 times), `w` to skip to the `+` after `index1`, `h` to move
