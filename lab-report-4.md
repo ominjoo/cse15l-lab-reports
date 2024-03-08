@@ -7,7 +7,7 @@
 **Explanation:** I used the `ssh` command to log into `ieng6` with my account.
 
 ## Step 5: Clone fork using `SSH` URL
-![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/21cd6bc3-dcb3-4bf8-86e4-290f41d92331)
+![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/21cd6bc3-dcb3-4bf8-86e4-290f41d92331)\
 **Keys pressed:** `rm<space>-rf<space>lab7<enter>`, `git<space>clone<space><cmd+v><enter>`, \
 **Explanation:** Because `lab7` already exists, I removed it using `rm -rf lab7` and then cloned my fork of the repository using the `SSH` URL
 using `git clone`, pasting my `SSH` URL, and then pressing `<enter>`.
