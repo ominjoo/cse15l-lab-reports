@@ -7,11 +7,10 @@
 **Explanation:** I used the `ssh` command to log into `ieng6` with my account.
 
 ## Step 5: Clone fork using `SSH` URL
-![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/714ebbc9-4e99-47e1-beb1-b08cdc457dc4)
-**Keys pressed:** `git<space>clone<space><cmd+v><enter>`, `rm<space>-rf<space>lab7<enter>`, `<up><up><enter>` \
-**Explanation:** I used `git clone` and copied + pasted the `SSH` URL to clone my fork, and then I got an error message saying
-that `lab7` already exists. So, I removed the directory using `rm -rf lab7`, and then my previous `git clone` command
-was 2 up in my history, so I had to press `<up>` two times and then `<enter>`.
+![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/21cd6bc3-dcb3-4bf8-86e4-290f41d92331)
+**Keys pressed:** `rm<space>-rf<space>lab7<enter>`, `git<space>clone<space><cmd+v><enter>`, \
+**Explanation:** Because `lab7` already exists, I removed it using `rm -rf lab7` and then cloned my fork of the repository using the `SSH` URL
+using `git clone` and the pasted my `SSH` URL.
 
 ## Step 6: Run tests to demonstrate that they fail
 ![image](https://github.com/ominjoo/cse15l-lab-reports/assets/149638043/008ef993-0f36-4043-af55-0bc2c3453c72)
