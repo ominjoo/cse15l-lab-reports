@@ -34,10 +34,51 @@ so that the existing directories are deleted and remade.
 
 ---
 
+**Setup Information**\
+1.
+before running `grade.sh`:
+```
+cse15l-lab6-list-examples-grader/
+|-  lib/
+      |-  hamcrest-core-1.3.jar
+      |-  junit-4.13.2.jar
+|-  grade.sh
+|-  GradeServer.java
+|-  TestListExamples.java
+```
+after:
+```
+cse15l-lab6-list-examples-grader/
+|-  grading-area/
+      |-  IsMoon.class
+      |-  junit-output.txt
+      |-  ListExamples.class
+      |-  ListExamples.java
+      |-  StringChecker.class
+      |-  TestListExamples.class
+      |-  TestListExamples.java
+|-  lib/
+      |-  hamcrest-core-1.3.jar
+      |-  junit-4.13.2.jar
+|-  student-submission/
+      |-  ListExamples.java
+|-  grade.sh
+|-  GradeServer.java
+|-  TestListExamples.java
+```
+2. kdshfk
+3. Command line to trigger the bug:
+   ```
+   bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-lab3
+   bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-corrected
+   ```
+   bug occurs when the `bash grade.sh` command is ran after the first time.
 
+4. Description of what to edit to fix the bug:\
+   `rm -rf student submission` and `rm -rf grading-area` should be added to the top of the `grade.sh` file so that the old `student submission` and `grading-area` folders containing the contents of the previous student repository aren't used for the current student's repository. It's like refreshing and starting new every time you run the script.
 
+## Reflection
 
-
-
+From the second half of the quarter, I think the biggest takeaways were being introduced to Vim and Java Debugger. I have heard a lot of people in computer science talk about these tools and now I know how to edit and debug files practically all from the terminal! One of my favorite skill demonstrations was the last skill demo, in which we didn't even a text editor like VsCode at all - just the terminal.
 
   
