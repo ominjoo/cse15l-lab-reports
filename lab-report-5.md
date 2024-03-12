@@ -29,7 +29,7 @@ wrong files, etc. they ALL gave the output of "Score: 0/1". Each time after the 
 and `student-submission` already exist. I'm thinking that the grading script is reading from the contents within those directories
 created from the *first* student submission I tested. That's why it keeps outputting "Score: 0/1", because that's the result of running
 tests on the first submission. I think that the bug may be that I lack the code that allows for a new `grading-script` and `student-submission` 
-each time I run the script. I could probably do this by adding `rm -rf student submission` and `rm -rf grading-area` to the top of the script file,
+each time I run the script. I could probably do this by adding `rm -rf student-submission` and `rm -rf grading-area` to the top of the script file,
 so that the existing directories are deleted and remade.
 
 ---
@@ -224,7 +224,7 @@ class ExecExamples {
    bug occurs when the `bash grade.sh` command is ran after the first time.
 
 4. Description of what to edit to fix the bug:\
-   `rm -rf student submission` and `rm -rf grading-area` should be added to the top of the `grade.sh` file so that the old `student submission` and `grading-area` folders containing the contents of the previous student repository aren't used for the current student's repository. It's like refreshing and starting new every time you run the script.
+   `rm -rf student-submission` and `rm -rf grading-area` should be added to the top of the `grade.sh` file so that the old `student-submission` and `grading-area` folders containing the contents of the previous student repository aren't used for the current student's repository. It's like refreshing and starting new every time you run the script.
 
 ## Reflection
 
