@@ -66,7 +66,156 @@ cse15l-lab6-list-examples-grader/
 |-  GradeServer.java
 |-  TestListExamples.java
 ```
-2. kdshfk
+2.
+**`grade.sh`**
+```
+CPATH='.:../lib/hamcrest-core-1.3.jar:../lib/junit-4.13.2.jar'
+
+mkdir grading-area
+
+git clone $1 student-submission
+echo 'Finished cloning'
+
+if [ -f ./student-submission/ListExamples.java ]
+then
+    cp student-submission/ListExamples.java grading-area/
+    cp TestListExamples.java grading-area/
+else
+    echo "ListExamples.java is missing"
+    echo "Score: 0"
+    exit 1
+fi
+
+cd grading-area
+javac -cp $CPATH *.java
+
+if [ $? -ne 0 ]
+then
+    echo "Program won't compile"
+    echo "Score: 0"
+    exit 1
+fi
+
+java -cp $CPATH org.junit.runner.JUnitCore TestListExamples >junit-output.txt
+
+
+linecount=$(wc -l < "junit-output.txt")
+
+if [ "$linecount" -gt 6 ]
+then
+    lastline=$(cat junit-output.txt | tail -n 2 | head -n 1)
+    tests=$(echo $lastline | awk '{print $3}' | tr -d ',')
+    failures=$(echo $lastline | awk '{print $5}')
+    successes=$((tests - failures))
+    echo "Score: $successes / $tests"
+else
+    echo "Score: 100%"
+fi
+```
+**`TestListExamples.java`**
+```
+import static org.junit.Assert.*;
+import org.junit.*;
+import java.util.Arrays;
+import java.util.List;
+
+class IsMoon implements StringChecker {
+  public boolean checkString(String s) {
+    return s.equalsIgnoreCase("moon");
+  }
+}
+
+public class TestListExamples {
+  @Test(timeout = 500)
+  public void testMergeRightEnd() {
+    List<String> left = Arrays.asList("a", "b", "c");
+    List<String> right = Arrays.asList("a", "d");
+    List<String> merged = ListExamples.merge(left, right);
+    List<String> expected = Arrays.asList("a", "a", "b", "c", "d");
+    assertEquals(expected, merged);
+  }
+}
+```
+**`GradeServer.java`**
+```
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.URI;
+import java.net.URISyntaxException;
+import java.util.Arrays;
+import java.util.stream.Stream;
+
+class ExecHelpers {
+
+  static String streamToString(InputStream out) throws IOException {
+    String result = "";
+    while(true) {
+      int c = out.read();
+      if(c == -1) { break; }
+      result += (char)c;
+    }
+    return result;
+  }
+
+  static String exec(String[] cmd) throws IOException {
+    Process p = new ProcessBuilder()
+                    .command(Arrays.asList(cmd))
+                    .redirectErrorStream(true)
+                    .start();
+    InputStream outputOfBash = p.getInputStream();
+    return String.format("%s\n", streamToString(outputOfBash));
+  }
+
+}
+
+class Handler implements URLHandler {
+    public String handleRequest(URI url) throws IOException {
+       if (url.getPath().equals("/grade")) {
+           String[] parameters = url.getQuery().split("=");
+           if (parameters[0].equals("repo")) {
+               String[] cmd = {"bash", "grade.sh", parameters[1]};
+               String result = ExecHelpers.exec(cmd);
+               return result;
+           }
+           else {
+               return "Couldn't find query parameter repo";
+           }
+       }
+       else {
+           return "Don't know how to handle that path!";
+       }
+    }
+}
+
+class GradeServer {
+    public static void main(String[] args) throws IOException {
+        if(args.length == 0){
+            System.out.println("Missing port number! Try any number between 1024 to 49151");
+            return;
+        }
+
+        int port = Integer.parseInt(args[0]);
+
+        Server.start(port, new Handler());
+    }
+}
+
+class ExecExamples {
+  public static void main(String[] args) throws IOException {
+    String[] cmd1 = {"ls", "lib"};
+    System.out.println(ExecHelpers.exec(cmd1));
+
+    String[] cmd2 = {"pwd"};
+    System.out.println(ExecHelpers.exec(cmd2));
+
+    String[] cmd3 = {"touch", "a-new-file.txt"};
+    System.out.println(ExecHelpers.exec(cmd3));
+  }
+}
+
+```
 3. Command line to trigger the bug:
    ```
    bash grade.sh https://github.com/ucsd-cse15l-f22/list-methods-lab3
